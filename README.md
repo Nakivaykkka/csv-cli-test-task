@@ -34,7 +34,7 @@ project/
 │   ├── test_sorter.py
 ├── test.csv              # пример CSV-файла
 ├── README.md
-└── requirements.txt      # (может быть пустым)
+└── requirements.txt      
 ```
 
 ---
