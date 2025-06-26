@@ -1,3 +1,6 @@
+from tabulate import tabulate
+
+
 from csvtools.cli import parse_args
 from csvtools.reader import read_csv
 from csvtools.filters import filter_rows
@@ -22,8 +25,11 @@ def main():
         print(f"Применена сортировка: {args.order_by}")
     
     # Вывод отфильтрованных и/или отсортированных строк
-    for row in rows:
-        print(row)
+    if rows:
+        print(tabulate(rows, headers="keys", tablefmt="grid"))
+    else:
+        print("Нет данных для отображения.")
+
     
     # Выполнение агрегации, если указана
     if args.aggregate:
